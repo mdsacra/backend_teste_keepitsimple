@@ -24,7 +24,7 @@ public class User implements UserDetails {
     Long id;
 
     @Column(nullable = false, length = 20)
-    String username;
+    String login;
 
     @Column(nullable = false, length = 15)
     String password;
@@ -48,7 +48,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return this.username;
+        return this.login;
     }
 
     @Override

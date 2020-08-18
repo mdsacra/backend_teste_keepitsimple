@@ -40,10 +40,12 @@ public class UserServiceImpl implements UserServiceInterface, UserDetailsService
         return userRepository.save(user);
     }
 
+
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        return Optional.of(userRepository.findByUsername(username))
+        return Optional.of(userRepository.findByLogin(username))
                 .orElseThrow(() -> new UsernameNotFoundException("Usuário não existe!"));
     }
 }

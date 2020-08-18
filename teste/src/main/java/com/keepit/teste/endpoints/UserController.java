@@ -19,10 +19,14 @@ public class UserController {
     @Autowired
     private UserServiceImpl userService;
 
-
     @PostMapping
     public User save(@Valid @RequestBody User user){
         return userService.save(user);
+    }
+
+    @GetMapping
+    public List<User> findAll(){
+        return userService.findAll();
     }
 
     @GetMapping("{id}")
